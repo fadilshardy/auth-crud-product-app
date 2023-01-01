@@ -1,6 +1,4 @@
 import client from './apiClient';
-
-
 export const login = async (payload) => {
     try {
         const res = await client.post(`/login`, payload);
@@ -17,11 +15,14 @@ export const login = async (payload) => {
     }
 }
 
-export const logout = async () => {
+export const logout = async (token = null) => {
     try {
-        return await client.post(`/logout`);
+        const res = await client.post(`/logout`, {}, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+        return res.data;
     } catch (error) {
-        console.error(error);
+        console.error(error.response.data.message);
     }
 }
 

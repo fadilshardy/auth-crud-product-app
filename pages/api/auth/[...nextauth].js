@@ -29,7 +29,7 @@ export default NextAuth({
     events: {
         async signOut({ token, session }) {
             try {
-                return await AuthApi.logout();
+                return await AuthApi.logout(token.user.data.token);
             } catch (error) {
                 throw new Error(error);
             }
