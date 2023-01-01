@@ -1,7 +1,8 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import * as AuthApi from '../../../src/lib/authApi';
-export default NextAuth({
+
+export const authOptions = {
     providers: [
         CredentialsProvider({
             id: "login",
@@ -23,8 +24,7 @@ export default NextAuth({
         signIn: '/login',
     },
     session: {
-        jwt: true,
-        maxAge: 30 * 24 * 60 * 60,
+        strategy: "jwt",
     },
     events: {
         async signOut({ token, session }) {
@@ -55,4 +55,6 @@ export default NextAuth({
         },
     },
     secret: process.env.JWT_SECRET
-});
+}
+
+export default NextAuth(authOptions);
