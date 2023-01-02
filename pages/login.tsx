@@ -14,17 +14,6 @@ interface ILoginProps {
 
 const Login: React.FC<ILoginProps> = (props) => {
     const router = useRouter();
-    const { status } = useSession();
-
-    console.log(status);
-
-
-    // useEffect(() => {
-
-    //     if (status === 'authenticated') router.push('/')
-
-    // }, [status]);
-
 
     const [formData, setFormData] = useState({
         email: '',
@@ -46,10 +35,10 @@ const Login: React.FC<ILoginProps> = (props) => {
 
             const res = await signIn('login',
                 {
-                    callbackUrl: `${window.location.origin}/home`,
                     redirect: false,
                     email,
                     password,
+                    callbackUrl: `${window.location.origin}`,
                 }
             )
 
