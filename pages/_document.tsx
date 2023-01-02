@@ -9,7 +9,18 @@ export default class _Document extends Document {
     render() {
         return (
             <Html>
-                <Head />
+                <Head>
+                    <link
+                        as="style"
+                        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+                        rel="preload"
+                    />
+
+                    <link
+                        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+                        rel="stylesheet"
+                    />
+                </Head>
                 <body>
                     <Main />
                     <NextScript />
