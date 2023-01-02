@@ -1,16 +1,15 @@
 
 
 import { GetServerSidePropsContext } from 'next';
-import { useEffect, useState } from 'react';
-import { useSession, signIn } from 'next-auth/react';
+import { useState } from 'react';
+import { signIn } from 'next-auth/react';
 import LoginForm from '../src/components/LoginForm/LoginForm';
-import { useRouter } from 'next/router'
-import { authOptions } from '../pages/api/auth/[...nextauth]'
-import { unstable_getServerSession } from "next-auth/next"
+import { useRouter } from 'next/router';
+import { authOptions } from '../pages/api/auth/[...nextauth]';
+import { unstable_getServerSession } from "next-auth/next";
+
 interface ILoginProps {
 }
-
-
 
 const Login: React.FC<ILoginProps> = (props) => {
     const router = useRouter();

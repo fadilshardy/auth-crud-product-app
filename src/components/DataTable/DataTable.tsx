@@ -198,7 +198,6 @@ const DataTable: React.FC<IDataTableProps> = ({ products }) => {
                 icon: <IconCheck size={16} />,
             });
 
-
         } catch (error) {
             console.error(error);
         } finally {

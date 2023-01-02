@@ -1,9 +1,10 @@
 import axios from 'axios';
 import { getSession } from 'next-auth/react';
 
-
+const API_BASE_URL = 'https://test.employee.tokoweb.xyz/api';
+// const API_BASE_URL = process.env.API_BASE_URL;
 const client = axios.create({
-    baseURL: process.env.API_BASE_URL,
+    baseURL: API_BASE_URL,
 });
 
 client.interceptors.request.use(async (config) => {
