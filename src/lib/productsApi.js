@@ -16,7 +16,7 @@ export const getProducts = async () => {
     }
 }
 
-export const viewProduct = async (id) => {
+export const detailProduct = async (id) => {
     try {
         const res = await client.get(`/product/show?product_id=${id}`);
         const product = res.data;

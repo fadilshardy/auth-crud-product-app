@@ -24,7 +24,7 @@ export const authOptions = {
         signIn: '/login',
     },
     session: {
-        strategy: "jwt",
+        strategy: "jwt"
     },
     events: {
         async signOut({ token, session }) {
